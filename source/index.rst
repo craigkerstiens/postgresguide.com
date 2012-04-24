@@ -9,14 +9,17 @@ Postgres Guide
 We here are very big fans of Postgres as a database and believe in many 
 cases it is the best database for the job. For many though working with and
 maintaining Postgres is a steep learning curve, though it doesn't have to be. 
-Postgres guide is designed as a guide for beginners and experiences users to
+Postgres guide is designed as a guide for beginners and experienced users to
 find specific tips and explore tools available within Postgres. To improve the
 ease of maintenance there's currently other great services to help with this
 such as `Heroku Postgres <http://postgres.heroku.com>`_.
 
 .. note::
     This still is still under rapid development. Please send any suggestions
-    (or requests) to craig.kerstiens@gmail.com.
+    (or requests) to craig.kerstiens@gmail.com. If you're interested in helping 
+    to maintain this document please hop over to 
+    `github <https://github.com/craigkerstiens/postgresguide.com>`_ and
+    contribute.
 
 
 Some History
