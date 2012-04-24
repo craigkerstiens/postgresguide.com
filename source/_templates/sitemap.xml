@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for file in files %}
+  <url>
+    <loc>http://postgresguide.com{{ file.path }}</loc>
+    <lastmod>{{ file.last_modified }}</lastmod>
+    <changefreq>{{ file.changefreq }}</changefreq>
+    <priority>{{ file.priority }}</priority>
+  </url>
+  {% endfor %}
+</urlset> 

@@ -1,0 +1,12 @@
+Jinja2==2.6
+Pygments==1.5
+docutils==0.8.1
+feedgenerator==1.2.1
+gevent==0.13.7
+goldenarch==0.0.5
+greenlet==0.3.4
+gunicorn==0.14.2
+pelican==2.8.0
+pytz==2012c
+static==0.4
+wsgiref==0.1.2
