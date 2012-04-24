@@ -19,7 +19,8 @@ such as `Heroku Postgres <http://postgres.heroku.com>`_.
     (or requests) to craig.kerstiens@gmail.com. If you're interested in helping 
     to maintain this document please hop over to 
     `github <https://github.com/craigkerstiens/postgresguide.com>`_ and
-    contribute.
+    contribute. To follow updates to the site check out our twitter account 
+    `PostgresGuide <http://www.twitter.com/postgresguide>`_.
 
 
 Some History
