@@ -42,10 +42,10 @@ Count
 
 One other case for Postgres that is currently costly due to sequential scans is count(*). There is not another way for Postgres to count the rows in a result set other than doing the full scan of the data.
 
-Primary Keys and Indexes
+Foreign Keys and Indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many ORMs when they create Primary and Foreign Keys will also create an index for you. Its of note that Postgres does not automatically create an index when creating the primary key, it is a separate step which you must do if not using an ORM.
+Some ORMs when they create Foreign Keys will also create an index for you. Its of note that Postgres does not automatically create an index when creating the primary key, it is a separate step which you must do if not using an ORM.
 
 Further Reading
 ---------------
