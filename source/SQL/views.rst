@@ -49,12 +49,11 @@ something similar to:
      employees.salary, 
      departments.department
    FROM 
-     employees, 
-     employee_departments,
-     departments
-   WHERE 
-     employees.id = employee_departments.employee_id
-     AND departments.id = employee_departments.department_id
+     employees
+   JOIN
+     employee_departments ON employees.id = employee_departments.employee_id
+   JOIN
+     departments ON departments.id = employee_departments.department_id
 
 In this case its not too complicated, though it does become tedious each time
 you wish to report against employes and their departments. This can be greatly
@@ -62,18 +61,17 @@ simplified by creating a view which will automatically do these joins for you:
 
 .. code-block:: sql
    
-   CREATE OR REPLACE employee_view AS
+   CREATE OR REPLACE VIEW employee_view AS
    SELECT 
      employees.last_name, 
      employees.salary, 
      departments.department
    FROM 
-     employees, 
-     employee_departments,
-     departments
-   WHERE 
-     employees.id = employee_departments.employee_id
-     AND departments.id = employee_departments.department_id
+     employees
+   JOIN
+     employee_departments ON employees.id = employee_departments.employee_id
+   JOIN
+     departments ON departments.id = employee_departments.department_id
 
 Now you can simply query your new table directly:
 
