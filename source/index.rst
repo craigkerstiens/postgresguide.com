@@ -29,8 +29,8 @@ Some History
 Postgres has gotten much more attention in recent years. It has accelerated its
 pace, meanwhile other RDMS's have slowed in releases. Though 
 `Postgre SQL/PostgreSQL/Postgres <http://www.postgresql.org/>`_ has a very long history in databases, 
-with its very name coming from one of the earliest databases Ingress 
-(Post ingress = Postgres) and its own implementation beginning in `1986 <http://www.postgresql.org/docs/8.4/static/history.html>`_.
+with its very name coming from one of the earliest databases Ingres 
+(Post ingres = Postgres) and its own implementation beginning in `1986 <http://www.postgresql.org/docs/8.4/static/history.html>`_.
 
 Guide:
 
