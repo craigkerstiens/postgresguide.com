@@ -44,8 +44,6 @@ We can inspect how Postgres will execute it with:
 
 We can both execute the query and inspect the path/time it took with:
 
-We can inspect how Postgres will execute it with:
-
 .. code-block:: sql
    
    EXPLAIN ANALYZE SELECT last_name FROM employees where salary >= 50000;
