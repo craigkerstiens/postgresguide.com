@@ -68,3 +68,11 @@ condition. Instead we can simply:
    SELECT count(*)
    FROM users
    WHERE created_at >= (now() - '1 day'::INTERVAL);
+
+An alternative syntax for this is available:
+
+.. code-block:: sql
+
+   SELECT count(*)
+   FROM users
+   WHERE created_at >= (now() - interval '1 month');
