@@ -2,8 +2,7 @@ Postgres Specific Tips
 ======================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
-   backup-restore
-   copy
+   dates
    window
