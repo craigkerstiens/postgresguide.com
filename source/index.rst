@@ -37,6 +37,7 @@ Guide:
 .. toctree::
    :maxdepth: 2
 
+   setup/index
    SQL/index
    utilities/index
    tips/index
