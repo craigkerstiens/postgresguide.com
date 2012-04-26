@@ -62,7 +62,7 @@ simplified by creating a view which will automatically do these joins for you:
 
 .. code-block:: sql
    
-   CREATE OR REPLACE employee_view AS
+   CREATE OR REPLACE VIEW employee_view AS
    SELECT 
      employees.last_name, 
      employees.salary, 
