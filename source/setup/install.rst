@@ -4,20 +4,17 @@ Installing Postgres
 For Mac
 ~~~~~~~
 
-brew update
-brew install postgresql
+`Postgres App <http://www.postgresapp.com>`_
 
-Now that its installed lets set it up to initialize a DB and startup:
+For Ubuntu
+~~~~~~~~~~
 
-initdb /usr/local/var/postgres
-cp /usr/local/Cellar/postgresql/9.0.1/org.postgresql.postgres.plist ~/Library/LaunchAgents
-launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
-pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+.. code-block:: sh
 
-For Linux
-~~~~~~~~~
+   sudo apt-get install postgresql
 
-sudo apt-get install postgresql
+For Windows
+~~~~~~~~~~~
 
 
-Finally lets connect.
+`Windows Installer <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`_

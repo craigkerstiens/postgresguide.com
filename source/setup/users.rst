@@ -14,3 +14,4 @@ Once you've initially installed Postgres you should be able to connect almost im
    CREATE DATABASE
    craig=# GRANT ALL PRIVILEGES ON DATABASE pgguide to craig;
    GRANT
+

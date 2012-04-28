@@ -1,6 +1,0 @@
-Setup
-=====
-
-Setup is often one of the hardest parts for new comers to Postgres. While there 
-are certain OS's (OSX) that have less than stellar 
-
