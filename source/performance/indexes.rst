@@ -32,6 +32,16 @@ You can create an index on one or many columns at a time. If you commonly filter
 Tips
 ----
 
+Create Index Concurrently
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When Postgres creates your index, similar to other databases, it holds a lock on the table while its building the index. For smaller datasets this can be quite quick, but often by the time your adding an index it has grown to a large amount of data. This means that to get performance improvements you must essentially experience downtime, at least for that table. Postgres has the ability to create this index without locking the table. By using CREATE INDEX CONCURRENTLY your index will be built without a long lock on the table while its built. An example use would be:
+
+.. code-block:: sql
+
+   CREATE INDEX CONCURRENTLY idx_salary ON employees(last_name, salary);
+
+
 When your index is smarter than you
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
