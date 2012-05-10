@@ -4,7 +4,7 @@ Execution Plan
 What is an Execution Plan
 -------------------------
 
-Postgres has a great ability to show you how it will actually execute a query under the covers. This is known as an `execution plan` and which is exposed by **explain**. Understanding this tells you how you can optimize your database with indexes to improve performance. The hard part for most users is understanding the output of these. While there's many pieces that are involved in understanding there's a few key primers most developers should know.
+Postgres has a great ability to show you how it will actually execute a query under the covers. This is known as an `execution plan` and which is exposed by **explain**. Understanding this tells you how you can optimize your database with indexes to improve performance. The hard part for most users is understanding the output of these. While there are many pieces involved in understanding here are a few key things most developers should know.
 
 More About Explain
 ------------------
@@ -15,7 +15,7 @@ Every query within Postgres has an execution plan when executed. There are three
 - Analyze form (which actually runs the query and outputs what does happen)
 - Verbose form (stay away)
 
-Explain can be run on many statements with most common being `SELECT` statements, though you can also use it on:
+Most commonly, **explain** is run on `SELECT` statements. However, you can also use it on:
 
 - INSERT
 - UPDATE
