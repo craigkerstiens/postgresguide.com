@@ -16,7 +16,13 @@ Backup
 - Plaintext format (readable and large) vs. binary format (unreadable and small) vs. tarball (ideal for restore)
 - All of your database or specific schemas/tables
 
-So lets get started with some backing up:
+So lets get started with some backing up - if you need a reminder of your databases you can list them with:
+
+.. code-block:: sql
+
+    psql -l
+
+Then carry out the dump with:
 
 .. code-block:: sql
 
@@ -33,7 +39,7 @@ The above will create the plaintext dump of your database. To create a form more
 Restore
 -------
 
-With restore theres a few more options that you'll want to consider when restoring. These include:
+When restoring, there are a few more options that you'll want to consider:
 
 - If the database already exists
 - The format of your backup
