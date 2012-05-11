@@ -6,7 +6,7 @@ Adding a User
 
 Once you've initially installed Postgres you should be able to connect almost immediately with `psql -h localhost`. This will put you inside your database to begin working. Of course the next step before doing anything else is to create a user account for yourself.
 
-..code::SQL
+.. code::SQL
 
    craig=# CREATE USER craig WITH PASSWORD 'Password';
    CREATE ROLE
