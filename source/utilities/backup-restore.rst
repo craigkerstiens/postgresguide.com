@@ -33,7 +33,7 @@ The above will create the plaintext dump of your database. To create a form more
 Restore
 -------
 
-With restore theres a few more options that you'll want to consider when restoring. These include:
+When restoring, there are a few more options that you'll want to consider:
 
 - If the database already exists
 - The format of your backup
