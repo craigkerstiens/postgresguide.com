@@ -40,7 +40,6 @@ When restoring, there are a few more options that you'll want to consider:
 
 .. code-block:: sql
 
-    pg_restore database.sql # restore from SQL file
     pg_restore -Fc database.bak # restore compressed binary format
     pg_restore -Ft database.tar # restore tarball
 
