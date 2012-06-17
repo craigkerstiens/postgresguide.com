@@ -31,13 +31,13 @@ Extracting all employees to a csv delimited file:
 
 .. code-block:: sql
 
-   \copy (SELECT * FROM employees) WITH CSV TO '~/employees.csv';
+   \copy (SELECT * FROM employees) TO '~/employees.csv' WITH (FORMAT CSV);
 
-Extracting all employees to a binary file:
+Extracting all employees to a binary file (note the quotes around the word Binary):
 
 .. code-block:: sql
 
-   \copy (SELECT * FROM employees) WITH BINARY TO '~/employees.dat';
+   \copy (SELECT * FROM employees) TO '~/employees.dat' WITH (FORMAT "Binary");
 
 And for loading data into a table the equivilant for each of the above: 
 
