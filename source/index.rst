@@ -43,5 +43,6 @@ Guide:
    utilities/index
    tips/index
    performance/index
+   sexy/index
 
 

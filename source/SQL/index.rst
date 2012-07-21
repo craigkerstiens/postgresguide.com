@@ -5,4 +5,5 @@ General SQL
    :maxdepth: 1
 
    select
+   joins
    views
