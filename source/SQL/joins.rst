@@ -25,7 +25,7 @@ Joining some data
 
 Lets start with an example of wanting to find which products have been purchased recently. To do this we'll obviously need data from both our products table and our purchases table. Look at each of the tables to get a better idea of what columns they have:
 
-..code-block:: sql
+.. code-block:: sql
 
    \d products
                 Table "public.products"
@@ -47,7 +47,7 @@ Lets start with an example of wanting to find which products have been purchased
 
 When two tables are related its done so by keys. We'll explain more on this later, the important part for now is that we can see the `product_id` on purchases is intended to reference the `id` field on products. With this we can now construct our query and retrieve as an example 5 purchages
 
-..code-block:: sql
+.. code-block:: sql
 
    SELECT 
       products.title, 
