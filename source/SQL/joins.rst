@@ -36,6 +36,8 @@ Lets start with an example of wanting to find which products have been purchased
     description | text                   | 
     price       | numeric(10,2)          | 
 
+.. code-block:: sql
+
    	\d purchases 
 	     Table "public.purchases"
 	   Column   |  Type   | Modifiers 
