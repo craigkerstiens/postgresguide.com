@@ -127,3 +127,9 @@ To search for an array that has a particular value, the keyword ANY is used.
    (0 rows)
 
 To search if all values of the array match a value, ALL is used.
+
+.. note::
+    Article contributed by
+    `Chandrakant Goplan <http://cgopalan.tumblr.com>`_.
+
+  
