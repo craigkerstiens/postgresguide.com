@@ -130,6 +130,6 @@ To search if all values of the array match a value, ALL is used.
 
 .. note::
     Article contributed by
-    `Chandrakant Goplan <http://cgopalan.tumblr.com>`_.
+    `Chandrakant Gopalan <http://cgopalan.tumblr.com>`_.
 
   
