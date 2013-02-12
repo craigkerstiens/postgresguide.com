@@ -6,3 +6,4 @@ Postgres the Sexy Parts
 
    hstore
    arrays
+   enums
