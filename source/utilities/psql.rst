@@ -23,7 +23,7 @@ The other option is to use a full string and let psql parse it:
     psql "dbname=dbhere host=hosthere user=userhere password=pwhere port=5432 sslmode=require"
 
 Once you've connected you can begin querying immediately. In addition to basic 
-queries you can also use certain commands. Running `\?` will give you a list 
+queries you can also use certain commands. Running `\\?` will give you a list 
 of all available commands, though a few key ones are called out the the tips 
 below.
 
