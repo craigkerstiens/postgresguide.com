@@ -55,7 +55,7 @@ One other case for Postgres that is currently costly due to sequential scans is 
 Foreign Keys and Indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some ORMs when they create Foreign Keys will also create an index for you. Its of note that Postgres does not automatically create an index when creating the primary key, it is a separate step which you must do if not using an ORM.
+Some ORMs when they create Foreign Keys will also create an index for you. Its of note that Postgres does not automatically create an index when creating the foreign key, it is a separate step which you must do if not using an ORM.
 
 Further Reading
 ---------------
