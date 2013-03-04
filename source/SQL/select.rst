@@ -4,7 +4,7 @@ Querying Data
 Tables
 ------
 
-Within a traditional RDBMS a particular data model will be stored within a table. Data may interact across tables, but we'll cover that later with joins. For now we'll start by viewing the tables that are available. Within Postgres we can do this by running the command `\d`:
+Within a traditional RDBMS a particular data model will be stored within a table. Data may interact across tables, but we'll cover that later with joins. For now we'll start by viewing the tables that are available. Within Postgres we can do this by running the command `\\d`:
 
 .. code-block:: sql
 
@@ -20,7 +20,7 @@ Within a traditional RDBMS a particular data model will be stored within a table
 Querying Data
 -------------
 
-Lets start by laying out some data. In this case lets start with our users, this is the first part in constructing a query (knowing where your data is coming from). The next part is examining what data we can query. We can again do this with the `\d' command, though this time we'll append the table name to it:
+Lets start by laying out some data. In this case lets start with our users, this is the first part in constructing a query (knowing where your data is coming from). The next part is examining what data we can query. We can again do this with the `\\d` command, though this time we'll append the table name to it:
 
 .. code-block:: sql
 
