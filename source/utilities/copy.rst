@@ -39,7 +39,7 @@ Extracting all employees to a binary file (note the quotes around the word Binar
 
    \copy (SELECT * FROM employees) TO '~/employees.dat' WITH (FORMAT "Binary");
 
-And for loading data into a table the equivilant for each of the above: 
+And for loading data into a table the equivalent for each of the above: 
 
 .. code-block:: sql
 
