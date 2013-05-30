@@ -6,6 +6,13 @@ For Mac
 
 `Postgres App <http://www.postgresapp.com>`_
 
+Or 
+
+.. code-block:: sh
+
+   brew install postgresql
+
+
 For Ubuntu
 ~~~~~~~~~~
 
