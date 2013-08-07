@@ -23,7 +23,7 @@ For YUM insallations (Fedora / Red Hat / CentOS / Scientific Linux)
 ~~~~~~~~~~~
 (Example used is for PostgreSQL 9.2 on CentOS 6.4 x64):
 
-1. Head over to 'PostgreSQL Yum Repository <http://yum.postgresql.org/>'_
+1. Head over to `PostgreSQL Yum Repository <http://yum.postgresql.org/>`_
 
 2. Select the version of PostgreSQL that you want to install and then your OS, version and architecture.
 
