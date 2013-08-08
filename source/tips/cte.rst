@@ -4,9 +4,12 @@ Common Table Expressions AKA WITH Queries
 What are they
 -------------
 
-From Documentation : "WITH provides a way to write auxiliary statements for use in a larger query. These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query. Each auxiliary statement in a WITH clause can be a SELECT, INSERT, UPDATE, or DELETE; and the WITH clause itself is attached to a primary statement that can also be a SELECT, INSERT, UPDATE, or DELETE."
+From Documentation : "WITH provides a way to write auxiliary statements for use in a larger query. 
+These statements, which are often referred to as Common Table Expressions or CTEs, can be thought of as defining temporary tables that exist just for one query. 
+Each auxiliary statement in a WITH clause can be a SELECT, INSERT, UPDATE, or DELETE; and the WITH clause itself is attached to a primary statement that can also be a SELECT, INSERT, UPDATE, or DELETE."
 
-CTEs help to break huge complicated queries into simpler modules. Apart from making the query more readable, there is huge benefit of getting a subquery materialized once and for all which can be refereed by your main query (by name, we'll get to detail in a while) so that the sub query is not computed-recomputed everytime.
+CTEs help to break huge complicated queries into simpler modules. 
+Apart from making the query more readable, there is huge benefit of getting a subquery materialized once and for all which can be refereed by your main query so that the sub query is not computed-recomputed everytime.
 To summarize CTE is kinda short-hand for creating temp table, which we would create usually using something like this :
 
 .. code-block:: sql
@@ -133,3 +136,6 @@ If you want to find all the children of a particular node (Say a node with NodeI
 	ON (first.ParentNodeId = second.NodeId)
 	)
 	SELECT * FROM NodeList ORDER BY Order NodeId;
+	
+To understand it's working and also to have a dataset and live example kindly read and follow `this blog post<http://www.depesz.com/2012/12/09/cute-overload/by>`_ Mr. Depesz.
+
