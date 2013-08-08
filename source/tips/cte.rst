@@ -18,7 +18,7 @@ To summarize CTE is kinda short-hand for creating temp table, which we would cre
 
 CTEs in PostgeSQL can be divided in 3 kinds :
 
-- Normal CTEs (Allows to make the results of queries available to other queries in the same statement. Only SLECTs.)
+- Normal CTEs (Allows to make the results of queries available to other queries in the same statement. Only SELECTs.)
 - Writable CTEs (Normal CTEs +  UPDATEs, DELETEs and INSERTs)
 - Recursive CTEs (Is your head already spinning??)
 
