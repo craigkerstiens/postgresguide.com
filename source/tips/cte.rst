@@ -13,10 +13,10 @@ To summarize CTE is kinda short-hand for creating temp table, which we would cre
 
 	CREATE TEMP TABLE foo AS SELECT...
 
-CTEs in PostgeSQL can be divided in 3 parts :
-1. Normal CTEs (Allows to make the results of queries available to other queries in the same statement. Only SLECTs.)
-2. Writable CTEs (Normal CTEs +  UPDATEs, DELETEs and INSERTs)
-3. Recursive CTEs (Is your head already spining??)
+CTEs in PostgeSQL can be divided in 3 kinds :
+- Normal CTEs (Allows to make the results of queries available to other queries in the same statement. Only SLECTs.)
+- Writable CTEs (Normal CTEs +  UPDATEs, DELETEs and INSERTs)
+- Recursive CTEs (Is your head already spining??)
 
 Examples
 --------------------------
@@ -27,34 +27,34 @@ The following CTE is equal to a normal select from employee table
 
 .. code-block:: sql
 
-With all_employees AS (	
-  Select empid, name, salary, deptid FROM tblemployee
-)
-Select * From all_employees;
+	With all_employees AS (	
+		Select empid, name, salary, deptid FROM employee
+	)
+	Select * From all_employees;
 
 Now, consider that you know well in advance for a query that you will need to select a particular group of Emplyees (beloning to a particular Department)
 The above code can be modified to use a where clause.
 
 .. code-block:: sql
 
-With all_employees AS (	
-  Select empid, name, salary, deptid FROM employee Where deptid = 2
-)
-Select * From all_employees;
+	With all_employees AS (	
+	  Select empid, name, salary, deptid FROM employee Where deptid = 2
+	)
+	Select * From all_employees;
 
 You can also have chained CTEs, i.e more than one CTEs in one statement, where one CTE uses resultset of previous CTE
 For Example:
 
 .. code-block:: sql
 
-With all_employees AS (	
-  Select empid, name, salary, deptid FROM employee Where deptid = 2
-),all_employees_with_deptname As(
-  Select e.*,d.deptname From all_employees e
-  Join department d
-  On e.deptid = d.deptid
-)
-Select * From all_employees_with_deptname;
+	With all_employees AS (	
+	  Select empid, name, salary, deptid FROM employee Where deptid = 2
+	),all_employees_with_deptname As(
+	  Select e.*,d.deptname From all_employees e
+	  Join department d
+	  On e.deptid = d.deptid
+	)
+	Select * From all_employees_with_deptname;
 
 In the above example the all_employees_with_deptname uses all_employees's resultset as a table.
 
