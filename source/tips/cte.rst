@@ -86,16 +86,17 @@ It is similar to a normal DELETE but now consider that you keep a count of total
 	
 The above query will calculate deleted emplyees per department and update the department table with respective count (i.e. subtracting the count).
 
-`Check this if you have time and want to learn in depth about wCTE.<http://thombrown.blogspot.in/2011/11/writeable-common-table-expressions.html>`_
+Check `this<http://thombrown.blogspot.in/2011/11/writeable-common-table-expressions.html>`_ if you have time and want to learn in depth about wCTE.
 
 3. Recursive CTE :
 ~~~~~~~~~~~~~~~~~~~~~
 
 This particular CTE is very useful for handling graph like tables specifically when you need to find a list of child of a particular row upto n-level depth.
 
-`The following query returns sum of all the multiples of 3 or 5 below 1000, which First Problem on Project Euler.<http://projecteuler.net/problem=1>`_
+The following query returns sum of all the multiples of 3 or 5 below 1000, which `First Problem on Project Euler.<http://projecteuler.net/problem=1>`_
+	
 	WITH RECURSIVE t1(a, b) AS (
-        VALUES(0,0)
+    VALUES(0,0)
     UNION ALL
         SELECT CASE CAST(b AS BOOLEAN)
                       WHEN b % 3 = 0 THEN b
