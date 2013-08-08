@@ -94,17 +94,19 @@ Check `this<http://thombrown.blogspot.in/2011/11/writeable-common-table-expressi
 This particular CTE is very useful for handling graph like tables specifically when you need to find a list of child of a particular row upto n-level depth.
 
 The following query returns sum of all the multiples of 3 or 5 below 1000, which `First Problem on Project Euler.<http://projecteuler.net/problem=1>`_
+
+.. code-block:: sql
 	
 	WITH RECURSIVE t1(a, b) AS (
     VALUES(0,0)
     UNION ALL
-        SELECT CASE CAST(b AS BOOLEAN)
-                      WHEN b % 3 = 0 THEN b
-                      WHEN b % 5 = 0 THEN b
-                END,
-                b + 1
-          FROM t1
-         WHERE b < 1000
+    SELECT CASE CAST(b AS BOOLEAN)
+        WHEN b % 3 = 0 THEN b
+        WHEN b % 5 = 0 THEN b
+    END,
+    b + 1
+    FROM t1
+    WHERE b < 1000
 	)
 	SELECT sum(a) FROM t1
 
