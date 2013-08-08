@@ -38,7 +38,7 @@ For YUM insallations (Fedora / Red Hat / CentOS / Scientific Linux)
 
 .. code-block:: sh
 
-   curl -O http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm
+   rpm -ivh pgdg-centos92-9.2-6.noarch.rpm
 
 5. Do a quick search which will show you available packages for postgres
 
