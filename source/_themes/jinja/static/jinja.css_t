@@ -195,7 +195,7 @@ div.body p, div.body dd, div.body li {
 
 div.admonition {
     background: #fafafa;
-    margin: 20px -30px;
+    margin: 20px 0;
     padding: 10px 30px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -346,7 +346,7 @@ ul, ol {
 pre {
     background: #eee;
     padding: 7px 30px;
-    margin: 15px -30px;
+    margin: 15px 0;
     line-height: 1.3em;
 }
 
