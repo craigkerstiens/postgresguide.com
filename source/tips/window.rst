@@ -20,7 +20,10 @@ First we can rank each individual over a certain grouping:
 
 .. code-block:: sql
    
-   SELECT last_name, salary, department, rank() OVER (PARTITION BY department ORDER BY salary DESC) FROM employees;
+   SELECT last_name, salary, department, 
+   rank() OVER (PARTITION BY department ORDER BY salary DESC) 
+   FROM employees;
+
    last_name    salary   department    rank
    Jones        45000    Accounting    1
    Williams     37000    Accounting    2
@@ -32,7 +35,10 @@ Hopefully its clear from here how we can filter and find only the top paid emplo
 
 .. code-block:: sql
    
-   SELECT * FROM (SELECT last_name, salary, department, rank() OVER (PARTITION BY department ORDER BY salary DESC) FROM employees) sub_query WHERE rank = 1;
+   SELECT * FROM (SELECT last_name, salary, department, 
+   rank() OVER (PARTITION BY department ORDER BY salary DESC) 
+   FROM employees) sub_query WHERE rank = 1;
+
    last_name    salary   department    rank
    Jones        45000    Accounting    1
    Smith        55000    Sales         1
