@@ -16,7 +16,7 @@ If you want to take the quick & painless approach instead, there are great
 services available such as `Heroku Postgres <http://postgres.heroku.com>`_.
 
 .. note::
-    This still is still under rapid development. Please send any suggestions
+    This is still under rapid development. Please send any suggestions
     (or requests) to craig.kerstiens@gmail.com. If you're interested in helping 
     to maintain this document please hop over to 
     `github <https://github.com/craigkerstiens/postgresguide.com>`_ and
