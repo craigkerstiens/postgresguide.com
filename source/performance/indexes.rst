@@ -50,7 +50,7 @@ In all cases an index will not be be used by Postgres. Most of the time you shou
 Count
 ~~~~~
 
-One other case for Postgres that is currently costly due to sequential scans is count(*). There is not another way for Postgres to count the rows in a result set other than doing the full scan of the data.
+Since Postgres version 9.2, count(*) queries can be optimized with indices thanks to index-only scans. However in previous versions, count(*) queries are costly because Postgres has to do a sequential scan.
 
 Foreign Keys and Indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
