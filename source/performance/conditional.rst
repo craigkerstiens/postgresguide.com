@@ -5,5 +5,5 @@ There are times where you may want data constraints, but only want them to exist
 
 .. code-block:: sql
 
-    CREATE UNIQUE INDEX user_email ON users (id) WHERE deleted_at IS NULL;
+    CREATE UNIQUE INDEX user_email ON users (email) WHERE deleted_at IS NULL;
 
