@@ -4,7 +4,7 @@ Installing Postgres
 For Mac
 ~~~~~~~
 
-`Postgres App <http://www.postgresapp.com>`_
+`Postgres App <http://postgresapp.com>`_
 
 For Ubuntu
 ~~~~~~~~~~
