@@ -1,8 +1,8 @@
 ---
 layout: page
 title:  "Users"
-date:   2015-01-27 22:02:36
-categories: jekyll update
+date:
+categories: setup
 permalink: /setup/users.html
 ---
 

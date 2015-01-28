@@ -1,34 +1,27 @@
 ---
 layout: page
-title:  "Installing"
-date:   2015-01-27 22:02:36
-categories: jekyll update
+title:  "Installing Postgres"
+date:
+categories: setup
 permalink: /setup/install.html
 ---
 
-Installing Postgres
-===================
-
-For Mac
-~~~~~~~
+## Mac
 
 `Postgres App <http://www.postgresapp.com>`_
 
-For Ubuntu
-~~~~~~~~~~
+## Ubuntu
 
 .. code-block:: sh
 
 sudo apt-get install postgresql
 
-For Windows
-~~~~~~~~~~~
-
+## Windows
 
 `Windows Installer <http://www.enterprisedb.com/products-services-training/pgdownload#windows>`_
 
-For YUM insallations (Fedora / Red Hat / CentOS / Scientific Linux)
-~~~~~~~~~~~
+### YUM insallations
+#### (Fedora / Red Hat / CentOS / Scientific Linux)
 
 (Example used is for PostgreSQL 9.2 on CentOS 6.4 x64)
 
