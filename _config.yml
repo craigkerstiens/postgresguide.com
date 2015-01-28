@@ -1,0 +1,26 @@
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+destination:    ./_site
+safe:           false
+lsi:            false
+include:        [".htaccess"]
+exclude:        ["script", "vendor", "Gemfile", "Gemfile.lock", "config.ru", "Procfile", "Rakefile", "readme.md", "scss"]
+permalink: /:categories/:year/:title
+markdown_ext:   markdown,mkd,mkdn,md
+markdown: redcarpet
+
+collections:
+  setup:
+    output: true
+  sql:
+    output: true
+  utilities:
+    output: true
+  tips:
+    output: true

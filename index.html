@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+  <ul class="post-list">
+    <h2>Setup</h2>
+    {% for document in site.setup %}
+      <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    {% endfor %}
+
+    <h2>General SQL</h2>
+    {% for document in site.sql %}
+      <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    {% endfor %}
+
+    <h2>Utilities</h2>
+    {% for document in site.utilities %}
+      <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    {% endfor %}
+
+    <h2>Postgres Specific Tips</h2>
+    {% for document in site.tips %}
+      <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+</div>
