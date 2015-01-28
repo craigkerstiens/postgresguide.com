@@ -188,8 +188,13 @@ pre {
 nav.side {
   float: left;
   width: 100%;
-  max-width: 260px;
+  max-width: 240px;
   margin-right: 20px;
+
+  img {
+    margin: 20px 0;
+    border-radius: 2px;
+  }
 
   h4 {
     color: #222;
@@ -203,4 +208,13 @@ nav.side {
     list-style: none;
     font-size: 13px;
   }
+}
+
+.note {
+  display: inline-block;
+  background: rgba(#000, .05);
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid rgba(#000, .2);
+  margin: 20px 0;
 }

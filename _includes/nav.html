@@ -1,31 +1,41 @@
 <nav class="side">
   <h4>Setup</h4>
   {% for document in site.setup %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
 
   <h4>General SQL</h4>
   {% for document in site.sql %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
 
   <h4>Utilities</h4>
   {% for document in site.utilities %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
 
   <h4>Postgres Specific Tips</h4>
   {% for document in site.tips %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
 
   <h4>Postgres Performance</h4>
   {% for document in site.performance %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
 
   <h4>Postgres the Sexy Parts</h4>
   {% for document in site.sexy %}
-  <li><a href="{{ document.url }}">{{ document.title }}</a></li>
+    <li><a href="{{ document.url }}">{{ document.title }}</a></li>
   {% endfor %}
+
+  {% for document in site.ads limit:1 %}
+    <li><a href="{{ document.url-link }}"><img src="{{ document.img }}" alt=""></a></li>
+  {% endfor %}
+
+  <h4>Other Links</h4>
+  {% for document in site.links %}
+    <li><a href="{{ document.url-link }}">{{ document.title }}</a></li>
+  {% endfor %}
+
 </nav>

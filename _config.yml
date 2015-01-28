@@ -24,3 +24,7 @@ collections:
     output: true
   sexy:
     output: true
+  links:
+    output: false
+  ads:
+    output: false
