@@ -1,0 +1,48 @@
+
+nav.side {
+  float: left;
+  width: 100%;
+  max-width: 240px;
+  margin-right: 20px;
+
+  img {
+    margin: 20px 0;
+    border-radius: 2px;
+  }
+
+  h4 {
+    color: #222;
+    font-weight: bold;
+    line-height: 32px;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  li {
+    list-style: none;
+    font-size: 13px;
+
+    nav {
+      display: none;
+    }
+  }
+
+  a.active {
+    color: pink !important;
+  }
+
+  li a.active ~ nav {
+    display: block;
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      &:before {
+        content: '-';
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+  }
+}

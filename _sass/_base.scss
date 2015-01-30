@@ -185,31 +185,6 @@ pre {
   }
 }
 
-nav.side {
-  float: left;
-  width: 100%;
-  max-width: 240px;
-  margin-right: 20px;
-
-  img {
-    margin: 20px 0;
-    border-radius: 2px;
-  }
-
-  h4 {
-    color: #222;
-    font-weight: bold;
-    line-height: 32px;
-    margin: 0;
-    margin-top: 10px;
-  }
-
-  li {
-    list-style: none;
-    font-size: 13px;
-  }
-}
-
 .note {
   display: inline-block;
   background: rgba(#000, .05);

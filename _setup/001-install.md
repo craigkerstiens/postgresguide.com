@@ -5,7 +5,6 @@ date:
 categories: setup
 permalink: /setup/install.html
 ---
-
 ## Mac
 
 `Postgres App <http://www.postgresapp.com>`_
