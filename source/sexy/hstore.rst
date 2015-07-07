@@ -48,6 +48,6 @@ Retrieving data
 
 .. code-block:: sql
 
-   SELECT name, attributes->'device' as device 
-   FROM products 
-   WHERE attributes->'edition'= 'ebook'
+   SELECT name, attributes->'author' as author
+   FROM products
+   WHERE attributes->'category' = 'fiction'
