@@ -5,22 +5,97 @@ date:   2015-01-27 22:02:36
 categories: General-SQL
 permalink: /sql/views.html
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Views
+=====
 
-Jekyll also offers powerful support for code snippets:
+What is a View
+--------------
 
-{% highlight ruby %}
-def print_hi(name)
-puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+According to
+[wikipedia](http://en.wikipedia.org/wiki/View_%28database%29) "a view
+consists of a stored query accessible as a virtual table in a relational
+database or a set of documents in a document-oriented database composed
+of the result set of a query or map and reduce functions."
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+In simpler terms a view is simply a logical table that automatically
+connects the pieces of underlying data. It does not actually duplicate
+or persist the data as its viewed in a logical form.
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Why use a View
+--------------
+
+Views are useful for many cases. Views are a great way to simplify your
+data model when providing it to others to work with. Additionally it can
+simplify working with your data for yourself as well. If you find
+yourself routinely joining two sets of data in a similar way a view may
+ease the process of duplicating that many times.
+
+When working with others not familiar with SQL a view is a great way to
+provide your un-normalized data.
+
+A View in Action
+----------------
+
+Lets take an example of some tables:
+
+![image](http://f.cl.ly/items/072Q3Y073Z0o413b3N2x/Untitled%202-1.png)
+
+![image](http://f.cl.ly/items/2Q470O2S2f2v1u091r3h/Untitled%202-2.png)
+
+![image](http://f.cl.ly/items/2I0a2u3z1x1Q0h2t3f1M/Untitled%202.png)
+
+To get your employees and their departments you'd often write a query
+that looks something similar to:
+
+~~~~ {.sourceCode .sql}
+SELECT 
+  employees.last_name, 
+  employees.salary, 
+  departments.department
+FROM 
+  employees, 
+  employee_departments,
+  departments
+WHERE 
+  employees.id = employee_departments.employee_id
+  AND departments.id = employee_departments.department_id
+~~~~
+
+In this case its not too complicated, though it does become tedious each
+time you wish to report against employes and their departments. This can
+be greatly simplified by creating a view which will automatically do
+these joins for you:
+
+~~~~ {.sourceCode .sql}
+CREATE OR REPLACE VIEW employee_view AS
+SELECT 
+  employees.last_name, 
+  employees.salary, 
+  departments.department
+FROM 
+  employees, 
+  employee_departments,
+  departments
+WHERE 
+  employees.id = employee_departments.employee_id
+  AND departments.id = employee_departments.department_id
+~~~~
+
+Now you can simply query your new table directly:
+
+~~~~ {.sourceCode .sql}
+SELECT *
+FROM employee_view
+~~~~
+
+And have it yield just as it would with the join above:
+
+~~~~ {.sourceCode .sql}
+last_name    salary   department
+Jones        45000    Accounting 
+Adams        50000    Sales
+Johnson      40000    Marketing
+Williams     37000    Accounting
+Smith        55000    Sales
+~~~~
