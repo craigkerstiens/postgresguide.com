@@ -38,17 +38,13 @@ Lets jump straight to it and create an index on the given table:
 
 ![image](http://f.cl.ly/items/2I0a2u3z1x1Q0h2t3f1M/Untitled%202.png)
 
-~~~~ {.sourceCode .sql}
-CREATE INDEX idx_salary ON employees(salary);
-~~~~
+    CREATE INDEX idx_salary ON employees(salary);
 
 You can create an index on one or many columns at a time. If you
 commonly filter against multiple columns in your database you can create
 your indexes against both columns:
 
-~~~~ {.sourceCode .sql}
-CREATE INDEX idx_salary ON employees(last_name, salary);
-~~~~
+    CREATE INDEX idx_salary ON employees(last_name, salary);
 
 Tips
 ----
@@ -65,9 +61,7 @@ table. By using CREATE INDEX CONCURRENTLY your index will be built
 without a long lock on the table while its built. An example use would
 be:
 
-~~~~ {.sourceCode .sql}
-CREATE INDEX CONCURRENTLY idx_salary ON employees(last_name, salary);
-~~~~
+    CREATE INDEX CONCURRENTLY idx_salary ON employees(last_name, salary);
 
 ### When your index is smarter than you
 
