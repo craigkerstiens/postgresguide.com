@@ -12,9 +12,7 @@ Views
 What is a View
 --------------
 
-According to
-[wikipedia](http://en.wikipedia.org/wiki/View_%28database%29) "a view
-consists of a stored query accessible as a virtual table in a relational
+According to [wikipedia](http://en.wikipedia.org/wiki/View_%28database%29) "a view consists of a stored query accessible as a virtual table in a relational
 database or a set of documents in a document-oriented database composed
 of the result set of a query or map and reduce functions."
 
