@@ -6,22 +6,96 @@ categories:
 permalink: /performance/indexes.html
 
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Indexes
+=======
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+What is an Index
+----------------
 
-Jekyll also offers powerful support for code snippets:
+An index is a specific structure that organizes a reference to your data
+that makes it easier to look up. In Postgres it is a copy of the item
+you wish to index combined with a reference to the actual data location.
+When accessing data, Postgres will either use some form of an index if
+it exists or a sequential scan. A sequential scan is when it searches
+over all of the data before returning the results.
 
-{% highlight ruby %}
-def print_hi(name)
-puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Advantages and Disadvantages
+----------------------------
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+Indexes are great for accessing your data faster. In most cases adding
+an index to a column will allow you to query the data faster. However,
+the trade off is that for each index you have you will insert data at a
+slower pace. Essentially when you insert your data with an index it must
+write data to two places as well as maintain the sort on the index as
+you insert data. Certain indexes additionally will be more effective
+than others, such as indexes on numbers or timestamps (text is
+expensive).
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Indexes in action
+-----------------
+
+Lets jump straight to it and create an index on the given table:
+
+![image](http://f.cl.ly/items/2I0a2u3z1x1Q0h2t3f1M/Untitled%202.png)
+
+~~~~ {.sourceCode .sql}
+CREATE INDEX idx_salary ON employees(salary);
+~~~~
+
+You can create an index on one or many columns at a time. If you
+commonly filter against multiple columns in your database you can create
+your indexes against both columns:
+
+~~~~ {.sourceCode .sql}
+CREATE INDEX idx_salary ON employees(last_name, salary);
+~~~~
+
+Tips
+----
+
+### Create Index Concurrently
+
+When Postgres creates your index, similar to other databases, it holds a
+lock on the table while its building the index. For smaller datasets
+this can be quite quick, but often by the time your adding an index it
+has grown to a large amount of data. This means that to get performance
+improvements you must essentially experience downtime, at least for that
+table. Postgres has the ability to create this index without locking the
+table. By using CREATE INDEX CONCURRENTLY your index will be built
+without a long lock on the table while its built. An example use would
+be:
+
+~~~~ {.sourceCode .sql}
+CREATE INDEX CONCURRENTLY idx_salary ON employees(last_name, salary);
+~~~~
+
+### When your index is smarter than you
+
+In all cases an index will not be be used by Postgres. Most of the time
+you should trust Postgres to do the right thing. An example case is when
+your query returns a large percentage of the data that exists in a
+table, it may not use the index. This is because it is easiest to scan
+the table once, versus using the index then making additional lookups.
+
+### Count
+
+One other case for Postgres that is currently costly due to sequential
+scans is count(\*). There is not another way for Postgres to count the
+rows in a result set other than doing the full scan of the data.
+
+### Foreign Keys and Indexes
+
+Some ORMs when they create Foreign Keys will also create an index for
+you. Its of note that Postgres does not automatically create an index
+when creating the foreign key, it is a separate step which you must do
+if not using an ORM.
+
+Further Reading
+---------------
+
+If you're looking for further reading I'd highly recommend checking out
+the book [PostgreSQL 9.0 High
+Performance](http://www.amazon.com/gp/product/184951030X/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=mypred-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=184951030X).
+Greg Smith, the author, is a personal friend and knows Postgres
+Performance extremely well, there's not a more definitive reference for
+postgres performance.

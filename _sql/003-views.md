@@ -48,54 +48,48 @@ Lets take an example of some tables:
 To get your employees and their departments you'd often write a query
 that looks something similar to:
 
-~~~~ {.sourceCode .sql}
-SELECT 
-  employees.last_name, 
-  employees.salary, 
-  departments.department
-FROM 
-  employees, 
-  employee_departments,
-  departments
-WHERE 
-  employees.id = employee_departments.employee_id
-  AND departments.id = employee_departments.department_id
-~~~~
+    SELECT 
+      employees.last_name, 
+      employees.salary, 
+      departments.department
+    FROM 
+      employees, 
+      employee_departments,
+      departments
+    WHERE 
+      employees.id = employee_departments.employee_id
+      AND departments.id = employee_departments.department_id
 
 In this case its not too complicated, though it does become tedious each
 time you wish to report against employes and their departments. This can
 be greatly simplified by creating a view which will automatically do
 these joins for you:
 
-~~~~ {.sourceCode .sql}
-CREATE OR REPLACE VIEW employee_view AS
-SELECT 
-  employees.last_name, 
-  employees.salary, 
-  departments.department
-FROM 
-  employees, 
-  employee_departments,
-  departments
-WHERE 
-  employees.id = employee_departments.employee_id
-  AND departments.id = employee_departments.department_id
-~~~~
+    CREATE OR REPLACE VIEW employee_view AS
+    SELECT 
+      employees.last_name, 
+      employees.salary, 
+      departments.department
+    FROM 
+      employees, 
+      employee_departments,
+      departments
+    WHERE 
+      employees.id = employee_departments.employee_id
+      AND departments.id = employee_departments.department_id
+
 
 Now you can simply query your new table directly:
 
-~~~~ {.sourceCode .sql}
-SELECT *
-FROM employee_view
-~~~~
+    SELECT *
+    FROM employee_view
 
 And have it yield just as it would with the join above:
 
-~~~~ {.sourceCode .sql}
-last_name    salary   department
-Jones        45000    Accounting 
-Adams        50000    Sales
-Johnson      40000    Marketing
-Williams     37000    Accounting
-Smith        55000    Sales
-~~~~
+    last_name    salary   department
+    Jones        45000    Accounting 
+    Adams        50000    Sales
+    Johnson      40000    Marketing
+    Williams     37000    Accounting
+    Smith        55000    Sales
+
