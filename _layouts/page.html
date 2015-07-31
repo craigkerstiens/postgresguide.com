@@ -7,5 +7,9 @@ layout: default
 </header>
 
 <article class="post-content">
+{% unless page.sharing == false %}
+    {% include post/sharing.html %}
+{% endunless %}
+
   {{ content }}
 </article>
