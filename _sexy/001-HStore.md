@@ -45,6 +45,6 @@ To insert data you would include it all within single quotes as you would for a 
 Retrieving data
 ---------------
 
-    SELECT name, attributes->'device' as device 
-    FROM products 
-    WHERE attributes->'edition'= 'ebook'
+    SELECT name, attributes->'author' as author
+    FROM products
+    WHERE attributes->'category' = 'fiction'
