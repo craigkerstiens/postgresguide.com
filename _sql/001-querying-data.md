@@ -38,7 +38,7 @@ Lets start by laying out some data. In this case lets start with our users, this
      last_login | timestamp without time zone | 
     
 
-Here we can see we've got a variety of data, lets for starters say we just want the first_name, last_name, and email of users. Now that we know the data we want below we can construct our query:
+Here we can see we've got a variety of data, lets for starters say we just want the first\_name, last\_name, and email of users. Now that we know the data we want below we can construct our query:
 
 -   The table we need to query
 -   The data we want from that table

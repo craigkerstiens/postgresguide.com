@@ -19,8 +19,6 @@ Datatypes
 -   Timestamp with Timezone (2012-04-25 13:00:00.00 PST)
 -   Interval - A span of time (4 days)
 
-> **note**
->
 > Keep a special reminder about interval, its a great utility for when you
 > :   need to query against some range of specific time.
 >
@@ -45,8 +43,6 @@ There are often times where you will like query and group by some truncated form
 
 You can find more on valid values for what you may truncate to over at the [Postgres Documentation](http://www.postgresql.org/docs/8.1/static/functions-datetime.html#FUNCTIONS-DATETIME-TRUNC).
 
-> **note**
->
 > Ordering and grouping by a number as above works perfectly fine in Postgres
 > :   it will automatically group and order by the column number. This
 >     is not something you should use in production, but does work well

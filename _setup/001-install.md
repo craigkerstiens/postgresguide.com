@@ -32,7 +32,7 @@ For YUM insallations
 2.  Select the version of PostgreSQL that you want to install and then your OS, version and architecture.
 3.  Download the RPM for your platform (using the link from step 2)
 
-    curl -O http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm
+    `curl -O http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-6.noarch.rpm`
 
 4.  Install the RPM
 
@@ -42,7 +42,7 @@ For YUM insallations
 
     yum list postgres*
 
-Note: It will probably list older versions as well, make sure to select proper version that you want to install and all the packages are of same version i.e server, client, contrib (not always necessary but better to be safe, right?)
+> Note: It will probably list older versions as well, make sure to select proper version that you want to install and all the packages are of same version i.e server, client, contrib (not always necessary but better to be safe, right?)
 
 6.  Install Packages as per choice
 
