@@ -1,6 +1,7 @@
 # Site settings
 title: Postgres Guide
 twitter_username: postgresguide
+twitter_tweet_button: true
 github_username: postgresguide
 destination:    ./_site
 safe:           false
