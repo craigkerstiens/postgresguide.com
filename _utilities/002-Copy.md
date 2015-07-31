@@ -5,22 +5,36 @@ date:   2015-01-27 22:02:36
 categories: General-SQL
 permalink: /utilities/copy.html
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+What is copy
+------------
 
-Jekyll also offers powerful support for code snippets:
+Postgres ships with several great utilities for moving your data around. The obvious ones are pg\_dump and pg\_restore for of course database backups and restores. A similar utility thats far less talked about, but equally as valuable is Postgres's copy utility. Copy allows you to do
+copy data into and out of tables in your database. It supports several modes including:
 
-{% highlight ruby %}
-def print_hi(name)
-puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+-   binary
+-   tab delimited
+-   csv delimited
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+Whether its for bulk data loading for testing, doing some light weight ETL, or simply grabbing a data extract to send to someone its a utility every developer will want to utilize at some point.
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Copy in Action
+--------------
+
+Extracting all employees to a tab delimited file:
+
+    \copy (SELECT * FROM employees) TO '~/employees.tsv';
+
+Extracting all employees to a csv delimited file:
+
+    \copy (SELECT * FROM employees) TO '~/employees.csv' WITH (FORMAT CSV);
+
+Extracting all employees to a binary file (note the quotes around the word Binary):
+
+    \copy (SELECT * FROM employees) TO '~/employees.dat' WITH (FORMAT "Binary");
+
+And for loading data into a table the equivalent for each of the above:
+
+    \copy employees FROM '~/employees.tsv';
+    \copy employees FROM '~/employees.csv' WITH CSV;
+    \copy employees FROM '~/employees.dat' WITH BINARY;
