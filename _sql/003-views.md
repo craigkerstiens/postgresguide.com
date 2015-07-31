@@ -6,9 +6,6 @@ categories: General-SQL
 permalink: /sql/views.html
 ---
 
-Views
-=====
-
 What is a View
 --------------
 

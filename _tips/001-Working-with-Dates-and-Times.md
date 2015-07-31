@@ -7,9 +7,6 @@ permalink: /tips/dates.html
 
 ---
 
-Working with Dates and Times
-============================
-
 A common activity with any database or programming language is interacting with dates and times. Postgres has several date and time datatypes as well as extra functions for working with them that will make your life easier.
 
 Datatypes

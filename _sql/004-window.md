@@ -1,13 +1,10 @@
 ---
 layout: page
-title:  "Views"
+title:  "Window functions"
 date:   2015-01-27 22:02:36
 categories: General-SQL
-permalink: /sql/views.html
+permalink: /sql/window.html
 ---
-
-Window Functions
-================
 
 What are they
 -------------

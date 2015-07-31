@@ -6,9 +6,6 @@ categories: setup
 permalink: /setup/example.html
 ---
 
-Example Database
-================
-
 For those interested in the querying portion of Postgres guide and less on designing their application you can load an example database provided by us. This example database is used through the SQL section and allows you to follow along without having to have your own schema/data.
 
 Local Setup

@@ -4,11 +4,7 @@ title:  "Enumerated Data Types"
 date:   2015-01-27 22:02:36
 categories: General-SQL
 permalink: /sexy/enums.html
-
 ---
-
-Enumerated Data Types 
-=====================
 
 Postgres provides enumerated types or ‘enums’ if you need to make sure some column values need to have a specific value out of a set of values. For example, if you need a column to only have values ‘Email’, ‘SMS’ and ‘Phone’, you can do this by first defining an enumerated type:
 

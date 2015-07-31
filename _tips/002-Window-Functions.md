@@ -7,9 +7,6 @@ permalink: /tips/window.html
 
 ---
 
-Window Functions
-================
-
 What are they
 -------------
 

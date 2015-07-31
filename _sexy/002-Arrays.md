@@ -3,12 +3,8 @@ layout: page
 title:  "Arrays"
 date:   2015-01-27 22:02:36
 categories: General-SQL
-permalink: /sexy/arrays.html
-
+permalink: /cool/arrays.html
 ---
-
-Arrays
-======
 
 Postgres allows columns to be defined as arrays of variable length. The type of the array can be an inbuilt type, a user-defined type or an enumerated type.
 

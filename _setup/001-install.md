@@ -6,9 +6,6 @@ categories: setup
 permalink: /setup/install.html
 ---
 
-Installing Postgres
-===================
-
 For Mac
 -------
 

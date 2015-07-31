@@ -6,9 +6,6 @@ categories: General-SQL
 permalink: /sql/joins.html
 ---
 
-Querying Data
-=============
-
 Tables
 ------
 

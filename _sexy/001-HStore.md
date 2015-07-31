@@ -3,12 +3,8 @@ layout: page
 title:  "HStore"
 date:   2015-01-27 22:02:36
 categories:
-permalink: /sexy/hstore.html
-
+permalink: /cool/hstore.html
 ---
-
-HStore
-======
 
 What is it
 ----------

@@ -6,9 +6,6 @@ categories: setup
 permalink: /setup/users.html
 ---
 
-Users
-=====
-
 Adding a User
 -------------
 

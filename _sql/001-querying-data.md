@@ -6,9 +6,6 @@ categories: General-SQL
 permalink: /sql/select.html
 ---
 
-Querying Data
-=============
-
 Tables
 ------
 
