@@ -47,7 +47,6 @@ You can find more on valid values for what you may truncate to over at the [Post
 > :   it will automatically group and order by the column number. This
 >     is not something you should use in production, but does work well
 >     for ad-hoc queries.
->
 
 ### Intervals
 

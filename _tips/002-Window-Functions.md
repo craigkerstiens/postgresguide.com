@@ -21,12 +21,7 @@ Lets take an example table:
 
 ![image](http://f.cl.ly/items/3U200N113O2U2g1j2g3V/Untitled%202-3.png)
 
-Lets assume that you wanted to find the highest paid person in each
-department. There's a chance you could do this by creating a complicated
-stored procedure, or maybe even some very complex SQL. Most developers
-would even opt for pulling the data back into their preferred language
-and then looping over results. With window functions this gets much
-easier.
+Lets assume that you wanted to find the highest paid person in each department. There's a chance you could do this by creating a complicated stored procedure, or maybe even some very complex SQL. Most developers would even opt for pulling the data back into their preferred language and then looping over results. With window functions this gets much easier.
 
 First we can rank each individual over a certain grouping:
 

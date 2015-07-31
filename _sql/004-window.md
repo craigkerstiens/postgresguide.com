@@ -9,9 +9,7 @@ permalink: /sql/window.html
 What are they
 -------------
 
-The [Postgres docs](http://www.postgresql.org/docs/9.1/static/tutorial-window.html) actually do a great job of explaining what window functions are: "A window function performs a calculation across a set of table rows that are somehow related to the current row. This is comparable to the type of calculation that can be done with an aggregate function. But unlike regular aggregate functions, use of a window
-function does not cause rows to become grouped into a single output row — the rows retain their separate identities. Behind the scenes, the window function is able to access more than just the current row of the
-query result.". However, even as clear as that is the value of them may not be immediately clear, so perhaps its easiest to see them in action.
+The [Postgres docs](http://www.postgresql.org/docs/9.1/static/tutorial-window.html) actually do a great job of explaining what window functions are: "A window function performs a calculation across a set of table rows that are somehow related to the current row. This is comparable to the type of calculation that can be done with an aggregate function. But unlike regular aggregate functions, use of a window function does not cause rows to become grouped into a single output row — the rows retain their separate identities. Behind the scenes, the window function is able to access more than just the current row of the query result.". However, even as clear as that is the value of them may not be immediately clear, so perhaps its easiest to see them in action.
 
 Window Functions in Action
 --------------------------
