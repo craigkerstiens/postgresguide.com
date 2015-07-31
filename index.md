@@ -16,7 +16,7 @@ Postgres](http://postgres.heroku.com).
 >     [github](https://github.com/craigkerstiens/postgresguide.com) and
 >     contribute. To follow updates to the site check out our twitter
 >     account [PostgresGuide](http://www.twitter.com/postgresguide).
->
+
 Some History
 ------------
 
