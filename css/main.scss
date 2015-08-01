@@ -35,10 +35,21 @@ $on-laptop:        800px;
     @media screen and (max-width: $device) {
         @content;
     }
+    @media screen and (max-width: $on-laptop)
+    {
+    	.side {
+    		visibility:hidden;
+    		display:none;
+    		max-width:0px;
+    	}
+    }
     @media screen and (min-width: $on-laptop)
     {
-    	.side {display:none}
-    	
+    	.mobile-menu {
+    		visibility:hidden;
+    		display:none;
+    		max-width:0px;    	
+    	}
     }
 }
 

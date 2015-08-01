@@ -19,13 +19,32 @@
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
-        {% for document in site.setup %}
-          <li><a href="{{ document.url }}">{{ document.title }}</a>
-            <nav>
-            </nav>
-          </li>
-        {% endfor %}
-        
+        <div class="mobile-menu">
+          <hr>
+          {% for document in site.setup %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+          <hr>          
+          {% for document in site.sql %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+          <hr>
+          {% for document in site.utilities %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+          <hr>
+          {% for document in site.tips %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+          <hr>
+          {% for document in site.performance %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+          <hr>
+          {% for document in site.sexy %}
+            <a class="page-link" href="{{ document.url }}">{{ document.title }}</a>
+          {% endfor %}
+        </div>
       </div>
     </nav>
 
