@@ -1,0 +1,15 @@
+{
+  "name": "Postgres Guide",
+  "description": "Postgres Guide",
+  "website": "http://www.postgresguide.com/",
+  "repository": "https://github.com/craigkerstiens/postgresguide.com",
+  "success_url": "/",
+  "buildpacks": [
+    {
+      "url": "https://github.com/dmathieu/heroku-buildpack-jekyll.git"
+    },
+    {
+      "url": "https://github.com/hone/heroku-buildpack-static"
+    }    
+  ]
+}
