@@ -47,7 +47,7 @@ The syntax for doing this is below, it contains the data you want to retrieve, f
 
     craig=# SELECT first_name, last_name, email 
     craig-# FROM users;
-       first_name | last_name |           email           
+     first_name | last_name |           email           
     ------------+-----------+---------------------------
      Craig      | Kerstiens | craig.kerstiens@gmail.com
     (1 row)
