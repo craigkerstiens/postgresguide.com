@@ -19,6 +19,13 @@
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
+        {% for document in site.setup %}
+          <li><a href="{{ document.url }}">{{ document.title }}</a>
+            <nav>
+            </nav>
+          </li>
+        {% endfor %}
+        
       </div>
     </nav>
 

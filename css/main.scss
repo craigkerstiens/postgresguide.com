@@ -35,6 +35,11 @@ $on-laptop:        800px;
     @media screen and (max-width: $device) {
         @content;
     }
+    @media screen and (min-width: $on-laptop)
+    {
+    	.side {display:none}
+    	
+    }
 }
 
 
