@@ -11,19 +11,18 @@ For Mac
 
 [Postgres App](http://www.postgresapp.com)
 
-For Ubuntu
-----------
+For Linux
+---------
+
+### For APT systems (Ubuntu, Debian, Mint, Etc)
 
     sudo apt-get install postgresql
 
-For Windows
------------
+### For Arch Linux
 
-[Windows Installer](http://www.enterprisedb.com/products-services-training/pgdownload#windows)
+    sudo pacman -Ss postgresql
 
-For YUM insallations
--------------------- 
-(Fedora / Red Hat / CentOS / Scientific Linux)
+### For YUM insallations (Fedora / Red Hat / CentOS / Scientific Linux)
 
 
 (Example used is for PostgreSQL 9.2 on CentOS 6.4 x64)
@@ -47,3 +46,9 @@ For YUM insallations
 6.  Install Packages as per choice
 
     yum install postgresql92-server.x86_64 postgresql92-contrib.x86_64 postgresql92-devel.x86_64
+
+For Windows
+-----------
+
+[Windows Installer](http://www.enterprisedb.com/products-services-training/pgdownload#windows)
+
