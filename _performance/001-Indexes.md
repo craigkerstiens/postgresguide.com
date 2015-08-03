@@ -49,12 +49,16 @@ In all cases an index will not be be used by Postgres. Most of the time you shou
 
 ### Count
 
-Since Postgres version 9.2, count(*) queries can be optimized with indices thanks to index-only scans. However in previous versions, count(*) queries are costly because Postgres has to do a sequential scan. 
+Since Postgres version 9.2, count(*) queries can be optimized with indexes thanks to index-only scans. However in previous versions, count(*) queries are costly because Postgres has to do a sequential scan. 
 
 
 ### Foreign Keys and Indexes
 
 Some ORMs when they create Foreign Keys will also create an index for you. Its of note that Postgres does not automatically create an index when creating the foreign key, it is a separate step which you must do if not using an ORM.
+
+### [Covering Indexes](https://wiki.postgresql.org/wiki/Index-only_scans#Covering_indexes)
+
+Also since Postgres version 9.2, queries that touch only an index can be much faster. For this reason, it can be useful to include important data with an index. Performance can be particularly improved if the newly-created index has many fewer columns than the table being indexed, since many fewer pages must be retrieved from the disk in order to satisfy the query.
 
 Further Reading
 ---------------
