@@ -13,6 +13,37 @@
         <div class="post">
           {{ content }}
         </div>
+        <div id="post-nav">
+          {% assign alldocs = "" | split: "" %}
+          {% for collection in site.collections %}
+            {% capture label %}{{ collection | first }}{% endcapture %}
+            {% for doc in site.collections.[label].docs %}
+              {% assign alldocs = alldocs | push: doc %}
+            {% endfor %}
+          {% endfor %}
+
+          {% for doc in alldocs %}
+            {% if doc.title == page.title %}
+              {% unless forloop.last %}
+                {% assign next = alldocs[forloop.index] %}
+                {% if next.url %}
+                  {% assign nexturl = next.url %}
+                  {% assign nexttitle = next.title %}
+                {% endif %}
+              {% endunless %}
+              {% unless forloop.first %}
+                {% if prev.url %}
+                  {% assign prevurl = prev.url %}
+                  {% assign prevtitle = prev.title %}
+                {% endif %}
+              {% endunless %}
+            {% endif %}
+            {% assign prev =  doc %}
+          {% endfor %}
+
+          {% if prevurl %}<p>Previous: <a href="{{prevurl}}" class="prev">{{prevtitle}}</a></p>{% endif %} 
+          {% if nexturl %}<p>Next: <a href="{{nexturl}}" class="next">{{nexttitle}}</a></p>{% endif %}
+        </div>
       </div>
     </div>
 
