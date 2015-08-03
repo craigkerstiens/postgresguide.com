@@ -59,6 +59,10 @@
             padding-top: 10px;
             text-align: center;
 
+            &:active {
+                -webkit-tap-highlight-color: rgba(0,0,0,0); //remove gray highlight in Mobile Safari
+            }
+
             > svg {
                 width: 18px;
                 height: 15px;
@@ -72,11 +76,11 @@
         .trigger {
             clear: both;
             display: none;
-        }
 
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
+            &.expanded {
+                display: block;
+                padding-bottom: 5px;
+            }
         }
 
         .page-link {
