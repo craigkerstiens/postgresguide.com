@@ -6,10 +6,12 @@ categories: General-SQL
 permalink: /sql/joins.html
 ---
 
-Tables
-------
+What are they?
+--------------
 
-Within a traditional RDBMS a particular data model will be stored within a table. Data may interact across tables, but we'll cover that later with joins. For now we'll start by viewing the tables that are available. Within Postgres we can do this by running the command `\d`:
+Joins are when you combine data from two different tables. The means in which you combine them depend on the type of join you use. There's multiple ways to join data, and we'll walk through each of those for starters lets look at an initial example to accomplish and the join that does it.
+
+All of these examples will be based on our example schema:
 
     craig=# \d
              List of relations
@@ -20,55 +22,39 @@ Within a traditional RDBMS a particular data model will be stored within a table
      public | users     | table | craig
     (3 rows)
 
-Querying Data
--------------
+Joining some data
+-----------------
 
-Lets start by laying out some data. In this case lets start with our users, this is the first part in constructing a query (knowing where your data is coming from). The next part is examining what data we can query. We can again do this with the `\d` command, though this time we'll append the table name to it:
+Lets start with an example of wanting to find which products have been purchased recently. To do this we'll obviously need data from both our products able and our purchases table. Look at each of the tables to get a better idea of what columns they have:
 
-    craig=# \d users
-                     Table "public.users"
-       Column   |            Type             | Modifiers 
-    ------------+-----------------------------+-----------
-     id         | integer                     | 
-     first_name | character varying(50)       | 
-     last_name  | character varying(50)       | 
-     email      | character varying(255)      | 
-     created_at | timestamp without time zone | 
-     updated_at | timestamp without time zone | 
-     last_login | timestamp without time zone | 
+    \d products
+                 Table "public.products"
+       Column    |          Type          | Modifiers 
+    -------------+------------------------+-----------
+     id          | integer                | 
+     title       | character varying(255) | 
+     description | text                   | 
+     price       | numeric(10,2)          | 
 
-
-Here we can see we've got a variety of data, lets for starters say we just want the first_name, last_name, and email of users. Now that we know the data we want below we can construct our query:
-
--   The table we need to query
--   The data we want from that table
-
-The syntax for doing this is below, it contains the data you want to retrieve, followed by where its coming from, with a semicolon signaling thats the end of your query:
-
-    craig=# SELECT first_name, last_name, email 
-    craig-# FROM users;
-     first_name | last_name |           email           
-    ------------+-----------+---------------------------
-     Craig      | Kerstiens | craig.kerstiens@gmail.com
-    (1 row)
+    \d purchases 
+         Table "public.purchases"
+       Column   |  Type   | Modifiers 
+    ------------+---------+-----------
+     id         | integer | 
+     user_id    | integer | 
+     product_id | integer | 
+     quantity   | integer |
 
 
-This is great when we want to pull back all of the data in a table, but with any size-able dataset this is far less feasible. In such cases what we'll want to do is potentially both limit the amount of data we return as well as filter it. First lets start with filtering.
+When two tables are related its done so by keys. We'll explain more on this later, the important part for now is that we can see the product\_id on purchases is intended to reference the id field on products. With this we can now construct our query and retrieve as an example 5 purchages
 
-Filtering Data
---------------
-
-To filter data you can use a combination of filters. The filter is first initially specified with the WHERE condition. An example of any user that has created an account since the start of 2012:
-
-
-    SELECT email, created_at
-    FROM users
-    WHERE created_at >= '2012-01-01'
-
-We can also combine this with other conditions using either the AND or the OR clause. To find all users that created accounts in January of 2012:
-
-    SELECT email, created_at
-    FROM users
-    WHERE created_at >= '2012-01-01'
-    AND created_at < '2012-02-01'
+    SELECT 
+       products.title, 
+       purchases.quantity
+    FROM 
+       products,
+       purchases
+    WHERE
+       products.id = purchases.product_id
+    LIMIT 5;
 
