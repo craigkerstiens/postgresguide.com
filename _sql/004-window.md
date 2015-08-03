@@ -23,15 +23,15 @@ Lets assume that you wanted to find the highest paid person in each department. 
 First we can rank each individual over a certain grouping:
 
 
-    SELECT last_name, 
-           salary, 
-           department, 
+    SELECT last_name,
+           salary,
+           department,
            rank() OVER (
-            PARTITION BY department 
-            ORDER BY salary 
-            DESC) 
+            PARTITION BY department
+            ORDER BY salary
+            DESC)
     FROM employees;
-    
+
     last_name    salary   department    rank
     Jones        45000    Accounting    1
     Williams     37000    Accounting    2
@@ -41,21 +41,21 @@ First we can rank each individual over a certain grouping:
 
 Hopefully its clear from here how we can filter and find only the top paid employee in each department:
 
-    SELECT * 
-    FROM 
+    SELECT *
+    FROM
         (
-            SELECT last_name, 
-                   salary, 
-                   department, 
+            SELECT last_name,
+                   salary,
+                   department,
                    rank() OVER (
-                    PARTITION BY department 
-                    ORDER BY salary 
+                    PARTITION BY department
+                    ORDER BY salary
                     DESC
-                   ) 
-            FROM employees) 
-        sub_query 
+                   )
+            FROM employees)
+        sub_query
     WHERE rank = 1;
-    
+
     last_name    salary   department    rank
     Jones        45000    Accounting    1
     Smith        55000    Sales         1
