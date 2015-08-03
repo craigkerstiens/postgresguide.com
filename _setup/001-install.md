@@ -21,7 +21,7 @@ For Windows
 
 [Windows Installer](http://www.enterprisedb.com/products-services-training/pgdownload#windows)
 
-For YUM insallations
+For YUM installations
 -------------------- 
 (Fedora / Red Hat / CentOS / Scientific Linux)
 
