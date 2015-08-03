@@ -46,7 +46,7 @@ Lets start with an example of wanting to find which products have been purchased
      quantity   | integer |
 
 
-When two tables are related its done so by keys. We'll explain more on this later, the important part for now is that we can see the product\_id on purchases is intended to reference the id field on products. With this we can now construct our query and retrieve as an example 5 purchages
+When two tables are related its done so by keys. We'll explain more on this later, the important part for now is that we can see the product\_id on purchases is intended to reference the id field on products. With this we can now construct our query and retrieve as an example 5 purchases
 
     SELECT 
        products.title, 
