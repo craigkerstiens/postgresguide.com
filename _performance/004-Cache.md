@@ -67,7 +67,7 @@ Looking at a real world example of the recently launched Heroku dashboard, we ca
      authorizations       |             0               |       0 
      delayed_jobs         |            23               |       0
 
-From this we can wee the events table which has around 700,000 rows has no indexes that have been used. From here you could investigate within my application and see some of the common queries that are used, one example is pulling the events for this blog post which you are reaching. You can see your [execution plan](<https://postgresguide.com/performance/explain.html?utm_source=referral&utm_medium=content&utm_campaign=craigkerstiens>) by running an [`EXPLAIN ANALYZE`](<https://postgresguide.com/performance/explain.html?utm_source=referral&utm_medium=content&utm_campaign=craigkerstiens>) which gives you can get a better idea of the performance of a specific query:
+From this we can see the events table which has around 700,000 rows has no indexes that have been used. From here you could investigate within my application and see some of the common queries that are used, one example is pulling the events for this blog post which you are reading. You can see your [execution plan](<https://postgresguide.com/performance/explain.html?utm_source=referral&utm_medium=content&utm_campaign=craigkerstiens>) by running an [`EXPLAIN ANALYZE`](<https://postgresguide.com/performance/explain.html?utm_source=referral&utm_medium=content&utm_campaign=craigkerstiens>) which gives you can get a better idea of the performance of a specific query:
 
     EXPLAIN ANALYZE SELECT * FROM events WHERE app_info_id = 7559;
     QUERY PLAN
@@ -89,7 +89,7 @@ Given there's a sequential scan across all that data this is an area we can opti
      Total runtime: 0.200 ms
 
 While we can see the obvious improvement in this single query we can
-examine the results in [New Relic](https://elements.heroku.com/addons/newrelic)and see that we've significantly reduced our time spent in the database with the addition of this and a few other indexes:
+examine the results in [New Relic](https://elements.heroku.com/addons/newrelic) and see that we've significantly reduced our time spent in the database with the addition of this and a few other indexes:
 
 ![NewRelicGraph](<http://f.cl.ly/items/2x3g2h2220162C2M0w0r/Pasted%20Image%2010:1:12%208:55%20AM-2.png>)
 
