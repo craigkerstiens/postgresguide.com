@@ -61,4 +61,4 @@ Hopefully its clear from here how we can filter and find only the top paid emplo
     Smith        55000    Sales         1
     Johnson      40000    Marketing     1
 
-The best part of this is Postgres will optimize the query for you versus parsing over the entire result set if you were to do this yourself in plpgsql or in your applications code.
+The best part of this is Postgres will optimize the query for you versus parsing over the entire result set if you were to do this yourself in PL/pgSQL or in your applications code.
