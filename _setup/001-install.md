@@ -22,7 +22,7 @@ For Linux
 
     sudo pacman -Ss postgresql
 
-### For YUM insallations (Fedora / Red Hat / CentOS / Scientific Linux)
+### For YUM installations (Fedora / Red Hat / CentOS / Scientific Linux)
 
 
 (Example used is for PostgreSQL 9.2 on CentOS 6.4 x64)
