@@ -16,10 +16,12 @@
         <div id="post-nav">
           {% assign alldocs = "" | split: "" %}
           {% for collection in site.collections %}
-            {% capture label %}{{ collection | first }}{% endcapture %}
-            {% for doc in site.collections.[label].docs %}
-              {% assign alldocs = alldocs | push: doc %}
-            {% endfor %}
+            {% if collection[1].output %}
+              {% capture label %}{{ collection | first }}{% endcapture %}
+              {% for doc in site.collections.[label].docs %}
+                {% assign alldocs = alldocs | push: doc %}
+              {% endfor %}
+            {% endif %}
           {% endfor %}
 
           {% for doc in alldocs %}
