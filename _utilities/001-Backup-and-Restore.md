@@ -41,10 +41,12 @@ When restoring, there are a few more options that you'll want to consider:
 -   If the database already exists
 -   The format of your backup
 
+If your database already exists you only need to run the following:
+
     pg_restore -Fc database.bak # restore compressed binary format
     pg_restore -Ft database.tar # restore tarball
 
-If your database already exists you only need to run the above. However, if you're creating your database new from the restore you'll want to run a command similar to the following:
+However, if you're creating your database new from the restore you'll want to run a command similar to the following:
 
     pg_restore -Fc -C database.bak # restore compressed binary format
     pg_restore -Ft -C database.tar # restore tarball
