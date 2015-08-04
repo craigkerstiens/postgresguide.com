@@ -20,7 +20,7 @@ For Linux
 
 ### For Arch Linux
 
-    sudo pacman -Ss postgresql
+    sudo pacman -S postgresql
 
 ### For YUM installations (Fedora / Red Hat / CentOS / Scientific Linux)
 
