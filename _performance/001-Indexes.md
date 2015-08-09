@@ -45,7 +45,7 @@ be:
 
 ### When your index is smarter than you
 
-In all cases an index will not be be used by Postgres. Most of the time you should trust Postgres to do the right thing. An example case is when your query returns a large percentage of the data that exists in a table, it may not use the index. This is because it is easiest to scan the table once, versus using the index then making additional lookups.
+It is not always fastest for Postgres to make use of an index. Most of the time you should trust Postgres to do the right thing. An example case is when your query returns a large percentage of the data that exists in a table, it may not use the index. This is because it is easiest to scan the table once, versus using the index then making additional lookups.
 
 ### Count
 
