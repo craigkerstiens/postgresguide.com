@@ -91,7 +91,29 @@
  */
 .site-footer {
     border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+    padding: $spacing-unit 0 0;
+    background: #E8E8E8;
+    text-align: center;
+
+    li {
+      display: inline-block;
+    }
+}
+
+.footer-license {
+  background: #E3E3E3;
+  font-size: 13px;
+  padding: 10px 0;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .ccl {
+    margin: 10px 0;
+    display: block;
+
+  }
 }
 
 .footer-heading {
@@ -171,6 +193,7 @@
  }
 
 .page-content {
+  flex: 1;
     padding: $spacing-unit 0;
 }
 

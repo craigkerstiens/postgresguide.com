@@ -19,6 +19,9 @@ body {
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /**
@@ -166,12 +169,11 @@ pre {
   }
 }
 
-
-
 /**
 * Icons
 */
 .icon {
+  display: inline-block;
 
   > svg {
     display: inline-block;
@@ -180,7 +182,7 @@ pre {
     vertical-align: middle;
 
     path {
-        fill: $grey-color;
+      fill: $grey-color;
     }
   }
 }
