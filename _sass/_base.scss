@@ -80,16 +80,14 @@ h1, h2, h3, h4, h5, h6 {
 * Links
 */
 a {
+  font-weight: 300;
   color: $brand-color;
   text-decoration: none;
-
-  &:visited {
-      color: darken($brand-color, 15%);
-  }
+  transition: all 150ms ease;
 
   &:hover {
-      color: $text-color;
-      text-decoration: underline;
+    color: #2ecc71;
+    text-decoration: none;
   }
 }
 
@@ -177,12 +175,12 @@ pre {
 
   > svg {
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 36px;
+    height: 36px;
     vertical-align: middle;
 
     path {
-      fill: $grey-color;
+      fill: #333;
     }
   }
 }
