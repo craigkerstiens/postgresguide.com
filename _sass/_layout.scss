@@ -70,18 +70,18 @@
         }
 
         .trigger {
-            clear: both;
-            display: none;
+          clear: both;
+          display: none;
         }
 
         &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
+          display: block;
+          padding-bottom: 5px;
         }
 
         .page-link {
-            display: block;
-            padding: 5px 10px;
+          display: block;
+          padding: 5px 10px;
         }
     }
 }
@@ -90,71 +90,128 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
+  border-top: 1px solid $grey-color-light;
+  background: #E8E8E8;
+  text-align: center;
+
+  li {
+    display: inline-block;
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: all 150ms ease;
+      color: #222;
+      line-height: 36px;
+
+      .icon {
+        margin-right: 5px;
+      }
+
+      &:hover {
+        opacity: .6;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.footer-license {
+  background: #E3E3E3;
+  font-size: 12px;
+  padding: 10px 0;
+
+  img {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  p {
+    margin-bottom: 0;
+    display: inline-block;
+  }
+
+  .ccl {
+    display: inline-block;
+  }
 }
 
 .footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
+  font-size: 18px;
+  margin-bottom: $spacing-unit / 2;
 }
 
 .contact-list,
 .social-media-list {
-    list-style: none;
-    margin-left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 60px 0;
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+  font-size: 15px;
+  color: $grey-color;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+  text-align: center;
 }
 
 .footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+  width: 100%;
+  float: left;
+  margin-bottom: $spacing-unit / 2;
+  padding-left: $spacing-unit / 2;
 }
 
 .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+  width:         calc(35% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+  width:         calc(20% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+  width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-1,
+  .footer-col-2 {
+      width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+      width:         calc(50% - (#{$spacing-unit} / 2));
+  }
 
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
+  .footer-col-3 {
+      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+      width:         calc(100% - (#{$spacing-unit} / 2));
+  }
 }
 
 @include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+  .footer-col {
+      float: none;
+      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+      width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+
+  ul.social-media-list {
+    padding: 20px 0;
+
+    li a {
+      line-height: 24px;
     }
+  }
+
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }
-
-
 
 /**
  * Page content
@@ -171,6 +228,7 @@
  }
 
 .page-content {
+  flex: 1;
     padding: $spacing-unit 0;
 }
 
