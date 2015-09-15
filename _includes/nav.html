@@ -47,6 +47,14 @@
     </li>
   {% endfor %}
 
+  <h4>High availability</h4>
+  {% for document in site.high_availability %}
+    <li><a href="{{ document.url }}">{{ document.title }}</a>
+      <nav>
+      </nav>
+    </li>
+  {% endfor %}
+
   {% for document in site.ads limit:0 %}
     <li><a href="{{ document.url-link }}"><img src="{{ document.img }}" alt=""></a></li>
   {% endfor %}

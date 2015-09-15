@@ -25,6 +25,8 @@ collections:
     output: true
   sexy:
     output: true
+  high_availability:
+    output: true
   links:
     output: false
   ads:
