@@ -13,7 +13,7 @@ Psql is the interactive terminal for working with Postgres. Theres an abundance 
 
 -   -h the host to connect to
 -   -U the user to connect with
--   -P the port to connect to (default is 5432)
+-   -p the port to connect to (default is 5432)
 
     psql -h localhost -U username databasename
 
