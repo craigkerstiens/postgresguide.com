@@ -1,0 +1,44 @@
+.swatch {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 10px;
+  width: 20%;
+
+  p {
+    color: $text-color;
+
+    & code {
+      margin-left: 4px;
+      border-radius: 2px;
+      padding: 2px 4px;
+      background: #efefef;
+    }
+
+  }
+
+  .color {
+    border-radius: $border-radius;
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+
+    &.text-color {
+      background: $text-color;
+    }
+    &.brand-color {
+      background: $brand-color;
+    }
+    &.brand-green {
+      background: $brand-green;
+    }
+    &.gray-color {
+      background: $grey-color;
+    }
+    &.gray-color-light {
+      background: $grey-color-light;
+    }
+    &.gray-color-dark {
+      background: $grey-color-dark;
+    }
+  }
+}

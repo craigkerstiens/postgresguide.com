@@ -86,7 +86,7 @@ a {
   transition: all 150ms ease;
 
   &:hover {
-    color: #2ecc71;
+    color: $brand-green;
     text-decoration: none;
   }
 }
