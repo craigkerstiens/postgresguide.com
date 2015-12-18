@@ -45,7 +45,7 @@ For Linux
 
 6.  Install Packages as per choice
 
-    yum install postgresql92-server.x86_64 postgresql92-contrib.x86_64 postgresql92-devel.x86_64
+    `yum install postgresql92-server.x86_64 postgresql92-contrib.x86_64 postgresql92-devel.x86_64`
 
 For Windows
 -----------
