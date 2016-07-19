@@ -6,6 +6,8 @@ categories:
 permalink: /cool/hstore.html
 ---
 
+*Note: With the release of Postgres 9.4 and JSONB, in most cases it becomes a better approach than simply HStore. For a more in depth comparisson you can check out [this post](https://www.citusdata.com/blog/2016/07/14/choosing-nosql-hstore-json-jsonb/) by [Citus Data](https://www.citusdata.com)*
+
 What is it
 ----------
 
