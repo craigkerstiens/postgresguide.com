@@ -14,7 +14,9 @@ Local Setup
 First you'll want to download the data, then load it:
 
     curl -L -O http://cl.ly/173L141n3402/download/example.dump
-    pg_restore --verbose --clean --no-acl --no-owner -h localhost example.dump
+    createdb pgguide
+    pg_restore --no-owner --dbname pgguide example.dump
+    psql --dbname pgguide
 
 If you don't already have Postgres running locally you can use [Heroku Postgres](https://postgres.heroku.com) to provision a free database to use for development. Once you've provisioned a Heroku Postgres database you can load it with:
 
