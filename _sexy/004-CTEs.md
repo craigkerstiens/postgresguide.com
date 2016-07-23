@@ -3,7 +3,7 @@ layout: page
 title:  "CTEs (Common Table Expressions)"
 date:   2015-01-27 22:02:36
 categories: General-SQL
-permalink: /sexy/ctes.html
+permalink: /cool/ctes.html
 ---
 
 Long complex SQL queries aren't always the most readable thing. CTEs (as a gross over simplification) are somewhat akin to a view, but only during that specific query. In effect you can build up multiple different CTEs that reference earlier ones you created, thus making more composable and readable SQL. You can also recursively call them, allowing you to do things that you would otherwise need procedural language for. 
