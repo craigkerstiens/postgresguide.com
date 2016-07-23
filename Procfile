@@ -1,2 +1,2 @@
 jekyll: jekyll serve --watch --drafts
-web: rackup
+web: bundle exec rackup config.ru -p $PORT
