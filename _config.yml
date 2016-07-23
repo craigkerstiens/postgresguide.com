@@ -1,3 +1,4 @@
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
 # Site settings
 title: Postgres Guide
 twitter_username: postgresguide
