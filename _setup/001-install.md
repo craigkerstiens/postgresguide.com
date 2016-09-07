@@ -17,6 +17,7 @@ For Linux
 ### For APT systems (Ubuntu, Debian, Mint, Etc)
 
     sudo apt-get install postgresql
+    sudo service postgresql start
 
 ### For Arch Linux
 
