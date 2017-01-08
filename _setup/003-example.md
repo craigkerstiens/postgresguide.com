@@ -20,7 +20,7 @@ First you'll want to download the data, then load it:
 
 If you don't already have Postgres running locally you can use [Heroku Postgres](https://postgres.heroku.com) to provision a free database to use for development. Once you've provisioned a Heroku Postgres database you can load it with:
 
-    heroku pgbackups:restore DATABASE 'http://cl.ly/173L141n3402/download/example.dump'
+    heroku pg:backups --app APP restore 'http://cl.ly/173L141n3402/download/example.dump'
 
 Understanding the Schema
 ------------------------
