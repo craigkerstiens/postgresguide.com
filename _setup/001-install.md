@@ -5,6 +5,22 @@ date:
 categories: setup
 permalink: /setup/install.html
 ---
+For Docker
+----------
+```
+# clone repo and cd to docker assets directory
+git clone https://github.com/craigkerstiens/postgresguide.com.git
+cd postgresguide.com/assets/docker
+
+# run postgres setup script
+./setup_postgres.sh
+
+# login to postgres terminal (as "postgres" user, see Dockerfile)
+docker exec -it some-postgres psql --dbname pgguide
+
+# confirm that tables have been loaded
+pgguide=# \d
+```
 
 For Mac
 -------
