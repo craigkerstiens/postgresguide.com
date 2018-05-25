@@ -28,7 +28,7 @@ Then carry out the dump with:
 
     pg_dump database_name_here > database.sql
 
-The above will create the plaintext dump of your database. To create a form more suitable you a persistent backup and storage you can use either of the below:
+The above will create the plaintext dump of your database. To create a form more suitable for persistent backup and storage, you can use either of the below:
 
     pg_dump -Fc database_name_here > database.bak # compressed binary format
     pg_dump -Ft database_name_here > database.tar # tarball
@@ -43,10 +43,12 @@ When restoring, there are a few more options that you'll want to consider:
 
 If your database already exists you only need to run the following:
 
+    pg_restore database.sql     # restore a plaintext backup 
     pg_restore -Fc database.bak # restore compressed binary format
     pg_restore -Ft database.tar # restore tarball
 
 However, if you're creating your database new from the restore you'll want to run a command similar to the following:
 
+    pg_restore -C database.sql     # restore a plaintext backup 
     pg_restore -Fc -C database.bak # restore compressed binary format
     pg_restore -Ft -C database.tar # restore tarball
