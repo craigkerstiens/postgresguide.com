@@ -25,7 +25,7 @@ All of these examples will be based on our example schema:
 Joining some data
 -----------------
 
-Lets start with an example of wanting to find which products have been purchased recently. To do this we'll obviously need data from both our products able and our purchases table. Look at each of the tables to get a better idea of what columns they have:
+Lets start with an example of wanting to find which products have been purchased recently. To do this we'll obviously need data from both our products table and our purchases table. Look at each of the tables to get a better idea of what columns they have:
 
     \d products
                  Table "public.products"
